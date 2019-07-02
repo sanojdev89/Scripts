@@ -8,7 +8,7 @@ echo "my postgres running status is $reg_stat"
 if [  "$reg_stat" = "true" ]
 then
         echo "postgres container is up and running"
-                docker exec -it pg-docker  psql -U postgres -c "SELECT pg_reload_conf();" >> test.txt
+                docker exec -t pg-docker  psql -U postgres -c "SELECT pg_reload_conf();" >> test.txt
                  echo "after exec"  
                 if [ -s test.txt ]
                 then
